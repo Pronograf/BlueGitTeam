@@ -13,12 +13,28 @@ menu, nav, output, ruby, section, summary, time, mark, audio, video, main {
     vertical-align: baseline;
     font-family: 'Lato', sans-serif;
 }
+
 button:active, button:focus,
 input:active input:focus {
   outline: none;
 }
+/*---- Картинка на бэкграунде -----*/
 body{
-	background-color: rgba(44, 62, 80,1.0);
+    height: 100%;
+    background: fixed url(../img/11.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+/*----- Цвет центрального фона -----*/
+.rain{
+    background-color: rgba(18, 22, 27,1.0);
+    width: 70%;
+    min-height: 600px;
+    max-height: 1400px;
+    height: 99vh;
+    margin: 0 auto;
+    border: 4px double white;
+    border-radius: 15px;
+    opacity: 0.9;
 }
 h1, h2, h3, a, p{
 	color: white;
@@ -34,7 +50,11 @@ a, ul, ol, li{text-decoration: none;list-style: none;}
 header .intro{
 	text-align: center;
 	padding: 20px;
-	font-size: 2.5em;
+	font-size: 3em;
+        -moz-user-select: none;
+    o-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 header .sorting{
@@ -43,26 +63,38 @@ header .sorting{
 header ul{
 	text-align: center;
 }
+/*----- Цвет текста пунктов ------*/
 header ul li{
 	display: inline-block;
 	text-align: left;
 	padding: 10px;
-	font-size: 2.5em;
+	font-size: 2.75em;
 	letter-spacing: 4px;
 	color: rgba(91, 107, 137,1.0);
+    margin-left
     -moz-user-select: none;
-    -khtml-user-select: none;
+    o-user-select: none;
     -webkit-user-select: none;
     user-select: none;
 }
+header ul li:not(:last-child){
+    margin-right: 10px;
+}
 input[type="checkbox"] {
-    display:none;
+    display: none;
 }
 input[type="checkbox"] + label span {
     display:inline-block;
-    width:19px;
-    height:19px;
-    margin:-1px 4px 0 0;
+    width:30px;
+    height:30px;
+    margin:-1px 10px 0 0;
     vertical-align:middle;
-    background-image: url(../img/);
+    background-image: url(../img/sprite-1.png);
+    /*background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 96 84" enable-background="new 0 0 96 84" xml:space="preserve"><path fill="rgba(28, 33, 42,1.0)" d="M74.2,73.5H19.5c-2.8,0-5.1-2.3-5.1-5.1V15.6c0-2.8,2.3-5.1,5.1-5.1h54.7c2.8,0,5.1,2.3,5.1,5.1 v52.7C79.3,71.2,77,73.5,74.2,73.5z"/></svg>') no-repeat;*/
 }
+input[type="checkbox"]:checked + label span {
+    background-image: url(../img/sprite-2.png);
+    /*background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 96 84" enable-background="new 0 0 96 84" xml:space="preserve"><path fill="rgba(28, 33, 42,1.0)" d="M74.2,73.5H19.5c-2.8,0-5.1-2.3-5.1-5.1V15.6c0-2.8,2.3-5.1,5.1-5.1h54.7c2.8,0,5.1,2.3,5.1,5.1 v52.7C79.3,71.2,77,73.5,74.2,73.5z"/><polygon id="check" fill="rgb(251,253,223)" points="30.2,31.8 30.2,43 46.1,54 80.1,19.1 80.1,6.1 46.4,44.7 "/></svg>') no-repeat;*/
+}
+/*----------------*/
+
