@@ -14,29 +14,68 @@
       <header role="header" class="container">
         <div class="intro">
           <h1>What was your dream tonight?</h1>
+          <h2>
+          	Welcome to {{ guestbook_name }} page.
+          	<br>
+          	{% if guestbook_name == 'main' %}
+          		{% if url_linktext == 'Logout' %}
+          			Choice you'r dream's type.
+          		{% else %}
+          			Login please.
+          		{% endif %}
+          	{% endif %}
+          </h2>
+
         </div>
         <div class="sorting">
-         <ul>
-           <li>
-             <input type="checkbox" id="sort-1" value="fun">
-             <label for="sort-1"><span></span>fun</label>
-            </li>
-            <li>
-             <input type="checkbox" id="sort-2" value="sad">
-             <label for="sort-2"><span></span>sad</label>
-            </li>
-            <li>
-              <input type="checkbox" id="sort-3" value="weird">
-              <label for="sort-3"><span></span>weird</label>
-            <li>
-              <input type="checkbox" id="sort-4" value="another">
-              <label for="sort-4"><span></span>another</label>
-            </li>
-          </ul>
+        {% if url_linktext != 'Login' %}
+	         <ul>
+	           	<li>
+	           		<form>
+	      				<input for="sort-1" type="submit" value="fun" name="guestbook_name">
+		            </form>
+	            </li>
+	            <li>
+	             	<form>
+	      				<input for="sort-1" type="submit" value="sad" name="guestbook_name">
+		            </form>
+	            </li>
+	            <li>
+	              	<form>
+	      				<input for="sort-1" type="submit" value="weird" name="guestbook_name">
+		            </form>
+	            <li>
+		            <form>
+	      				<input for="sort-1" type="submit" value="another" name="guestbook_name">
+		            </form>
+	            </li>
+	          </ul>
+          {% endif %}
         </div>
       </header>
       <main>
-    
+      	{% for greeting in greetings %}
+      		{% if greeting.author %}
+        		<b>{{ greeting.author.email }}
+          		{% if user and user.user_id() == greeting.author.identity %}
+            		(You)
+          		{% endif %}
+        		</b> wrote:
+      		{% else %}
+       			An anonymous person wrote:
+      		{% endif %}
+      		<blockquote>{{ greeting.content }}</blockquote>
+    	{% endfor %}
+
+    	{% if guestbook_name != 'main' %}
+          	<form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
+	      		<div><textarea name="content" rows="3" cols="60" resize="none"></textarea></div>
+	      		<div><input type="submit" value="Поделиться сном"></div>
+	    	</form>
+        {% endif %}
+
+	    {% if url_linktext == 'Login' %}<a href="{{ url|safe }}">{{ url_linktext }}</a>{% endif %}
+
       </main>
     </div>
   </div>

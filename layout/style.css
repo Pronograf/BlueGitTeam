@@ -21,7 +21,7 @@ input:active input:focus {
 /*---- Картинка на бэкграунде -----*/
 body{
     height: 100%;
-    background: fixed url(../img/11.jpg) no-repeat;
+    background: fixed url(https://github.com/DimaMorgun/praktika-secont-team/blob/master/img/11.jpg?raw=true) no-repeat;
     background-size: 100% 100%;
 }
 /*----- Цвет центрального фона -----*/
@@ -89,11 +89,11 @@ input[type="checkbox"] + label span {
     height:30px;
     margin:-1px 10px 0 0;
     vertical-align:middle;
-    background-image: url(../img/sprite-1.png);
+    background-image: url(https://github.com/DimaMorgun/praktika-secont-team/blob/master/img/sprite-1.png?raw=true);
     /*background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 96 84" enable-background="new 0 0 96 84" xml:space="preserve"><path fill="rgba(28, 33, 42,1.0)" d="M74.2,73.5H19.5c-2.8,0-5.1-2.3-5.1-5.1V15.6c0-2.8,2.3-5.1,5.1-5.1h54.7c2.8,0,5.1,2.3,5.1,5.1 v52.7C79.3,71.2,77,73.5,74.2,73.5z"/></svg>') no-repeat;*/
 }
 input[type="checkbox"]:checked + label span {
-    background-image: url(../img/sprite-2.png);
+    background-image: url(https://github.com/DimaMorgun/praktika-secont-team/blob/master/img/sprite-2.png?raw=true);
     /*background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 96 84" enable-background="new 0 0 96 84" xml:space="preserve"><path fill="rgba(28, 33, 42,1.0)" d="M74.2,73.5H19.5c-2.8,0-5.1-2.3-5.1-5.1V15.6c0-2.8,2.3-5.1,5.1-5.1h54.7c2.8,0,5.1,2.3,5.1,5.1 v52.7C79.3,71.2,77,73.5,74.2,73.5z"/><polygon id="check" fill="rgb(251,253,223)" points="30.2,31.8 30.2,43 46.1,54 80.1,19.1 80.1,6.1 46.4,44.7 "/></svg>') no-repeat;*/
 }
 /*----------------*/
