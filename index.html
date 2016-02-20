@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="layout/style.css">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="opacity-body">
@@ -25,28 +26,28 @@
           		{% endif %}
           	{% endif %}
           </h2>
-
+          {% if url_linktext == 'Login' %}<a href="{{ url|safe }}">{{ url_linktext }}</a>{% endif %}
         </div>
         <div class="sorting">
         {% if url_linktext != 'Login' %}
 	         <ul>
 	           	<li>
 	           		<form>
-	      				<input for="sort-1" type="submit" value="fun" name="guestbook_name">
+	      				<input for="sort-1" type="submit" value="fun" name="guestbook_name" width="100px">
 		            </form>
 	            </li>
 	            <li>
 	             	<form>
-	      				<input for="sort-1" type="submit" value="sad" name="guestbook_name">
+	      				<input for="sort-1" type="submit" value="sad" name="guestbook_name" width="100px">
 		            </form>
 	            </li>
 	            <li>
 	              	<form>
-	      				<input for="sort-1" type="submit" value="weird" name="guestbook_name">
+	      				<input for="sort-1" type="submit" value="weird" name="guestbook_name" width="100px">
 		            </form>
 	            <li>
 		            <form>
-	      				<input for="sort-1" type="submit" value="another" name="guestbook_name">
+	      				<input for="sort-1" type="submit" value="another" name="guestbook_name" width="100px">
 		            </form>
 	            </li>
 	          </ul>
@@ -54,28 +55,26 @@
         </div>
       </header>
       <main>
-      	{% for greeting in greetings %}
-      		{% if greeting.author %}
-        		<b>{{ greeting.author.email }}
-          		{% if user and user.user_id() == greeting.author.identity %}
-            		(You)
-          		{% endif %}
-        		</b> wrote:
-      		{% else %}
-       			An anonymous person wrote:
-      		{% endif %}
-      		<blockquote>{{ greeting.content }}</blockquote>
-    	{% endfor %}
-
+      	<div class="maain">
+	      	{% for greeting in greetings %}
+	      		{% if greeting.author %}
+	        		<b>{{ greeting.author.email }}
+	          		{% if user and user.user_id() == greeting.author.identity %}
+	            		(You)
+	          		{% endif %}
+	        		</b> wrote:
+	      		{% else %}
+	       			An anonymous person wrote:
+	      		{% endif %}
+	      		<blockquote>{{ greeting.content }}</blockquote>
+	    	{% endfor %}
+    	</div>
     	{% if guestbook_name != 'main' %}
           	<form action="/sign?guestbook_name={{ guestbook_name }}" method="post">
-	      		<div><textarea name="content" rows="3" cols="60" resize="none"></textarea></div>
-	      		<div><input type="submit" value="Поделиться сном"></div>
+	      		<div><textarea name="content" rows="1" cols="60" resize="none"></textarea></div>
+	      		<div><input type="submit" value="Share you'r dream" width="200px"></div>
 	    	</form>
         {% endif %}
-
-	    {% if url_linktext == 'Login' %}<a href="{{ url|safe }}">{{ url_linktext }}</a>{% endif %}
-
       </main>
     </div>
   </div>

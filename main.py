@@ -67,7 +67,7 @@ class MainPage(webapp2.RequestHandler):
                                           DEFAULT_GUESTBOOK_NAME)
         greetings_query = Greeting.query(
             ancestor=guestbook_key(guestbook_name)).order(-Greeting.date)
-        greetings = greetings_query.fetch(10)
+        greetings = greetings_query.fetch(7)
 
         user = users.get_current_user()
         if user:
