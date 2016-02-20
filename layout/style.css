@@ -139,5 +139,11 @@ textarea{
     border-radius: 15px;
     text-align: center;
 }
+small{
+    float: right;
+    color: ivory;
+    font-size: 12px;
+    letter-spacing:1px;
+}
 /*----------------*/
 
