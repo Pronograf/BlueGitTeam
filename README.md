@@ -1,3 +1,3 @@
-# Praktika
-# RedGitTeam
-# GoodLuck GoodNight
+# Praktika.
+# RedGitTeam.
+# GoodLuck GoodNight.

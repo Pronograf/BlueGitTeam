@@ -18,7 +18,7 @@ button:active, button:focus,
 input:active input:focus, textarea:active, textarea:focus{
   outline: none;
 }
-/*---- Картинка на бэкграунде -----*/
+/*---- Картинка на бэкграунде. -----*/
 body{
     height: 100%;
     background: fixed url(https://github.com/DimaMorgun/praktika-secont-team/blob/master/img/11.jpg?raw=true) no-repeat;
